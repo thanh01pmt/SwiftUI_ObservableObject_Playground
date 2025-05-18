@@ -10,5 +10,4 @@ import Foundation
 struct ItemData: Identifiable {
     let id = UUID()
     let name: String
-    let initialValue: Int = 0
 }
