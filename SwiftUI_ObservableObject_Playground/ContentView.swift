@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Một mảng dữ liệu đơn giản, cố định
-    private let sampleItems: [ItemData] = [
+    @State private var sampleItems: [ItemData] = [
         ItemData(name: "Mục A"),
         ItemData(name: "Mục B"),
         ItemData(name: "Mục C")
@@ -32,8 +32,8 @@ struct ContentView: View {
                 if showList {
                     List {
                         Section(header: Text("Danh Mục Chính")) {
-                            ForEach(sampleItems) { currentItem in
-                                ListItemView(itemData: currentItem)
+                            ForEach($sampleItems) { $currentItem in
+                                ListItemView(itemData: $currentItem)
                             }
                         }
                     }
